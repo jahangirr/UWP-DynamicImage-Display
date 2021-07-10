@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="DoctorList.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DoctorList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Pink" Margin="10,10,10,0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450" />
+            <ColumnDefinition Width="450" />
+
+        </Grid.ColumnDefinitions>
+
+
+        <ListView Grid.Row="0" Grid.Column="0" x:Name="myList" Height="150" Margin="45,0,29,36" ShowsScrollingPlaceholders="True" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <Button Content="{Binding doctorId}" Click="Button_Click" />
+
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <StackPanel Grid.Row="0" Grid.Column="1"  Orientation="Vertical"  HorizontalAlignment="Left">
+            <Image x:Name="docImage" Source="doc-0001.jpg" Stretch="Fill" Width="150" Height="150" Margin="0,10,0,0"  />
+            <TextBlock x:Name="doctorDegree"  Text=" " Margin="160,10,10,0" Height="18" Width="150"  HorizontalAlignment="Right" />
+            <TextBlock x:Name="doctorEmail"  Text="  "   Margin="160,20,10,0" Height="18" Width="150" HorizontalAlignment="Right"  />
+            <TextBlock x:Name="doctorName"  Text=" " Margin="160,10,10,0" Height="18" Width="150" HorizontalAlignment="Left" />
+            <TextBlock x:Name="doctorAddress"  Text=""  Height="18" Margin="160,20,10,0" Width="150" HorizontalAlignment="Left" />
+        </StackPanel>
+
+
+    </Grid>
+</Page>
